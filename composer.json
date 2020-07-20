@@ -1,5 +1,5 @@
 {
-  "name": "codesicle/module-wishlist-ajax",
+  "name": "moonlay/module-wishlist-ajax",
   "description": "Wishlist add with Ajax dependent on admin setting",
   "type": "magento2-module",
   "license": "proprietary",
