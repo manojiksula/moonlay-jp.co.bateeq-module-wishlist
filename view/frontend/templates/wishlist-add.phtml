@@ -1,0 +1,29 @@
+<?php
+/**
+ * Codesicle_WishlistAjax
+ *
+ * @category    Codesicle
+ * @package     Codesicle_WishlistAjax
+ * @copyright   Copyright (c) 2019 Codesicle
+ * @author      Vlad Patru <vp@codesicle.com>
+ * @link        http://www.codesicle.com
+ */
+
+
+/** @var Magento\Wishlist\Block\Catalog\Product\ProductList\Item\AddTo\Wishlist $block */
+
+?>
+<?php if ($block->getWishlistHelper()->isAllow()) : ?>
+    <a href="#"
+        data-mage-init='{"checkItems":{}}'
+        class="action to-wishlist ajax-action"
+        title="<?= $block->escapeHtmlAttr(__('Add to Wish List')) ?>"
+        aria-label="<?= $block->escapeHtmlAttr(__('Add to Wish List')) ?>"
+        data-action="add-to-wishlist"
+        data-ajax-remove=''
+        data-ajax-post='<?= /* @noEscape */ $block->getAddToWishlistParams($block->getProduct(), true) ?>'
+        data-product-id="<?= /* @noEscape */ $block->getProduct()->getId(); ?>"
+        role="button">
+        <span><?= $block->escapeHtml(__('Add to Wish List')) ?></span>
+    </a>
+<?php endif; ?>

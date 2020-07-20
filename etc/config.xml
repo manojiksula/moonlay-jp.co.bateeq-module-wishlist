@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <codesicle_wishlist>
+            <wishlist>
+                <ajax_enable>0</ajax_enable>
+                <added_class>0</added_class>
+                <in_compare>0</in_compare>
+                <counter>1</counter>
+            </wishlist>
+        </codesicle_wishlist>
+    </default>
+</config>

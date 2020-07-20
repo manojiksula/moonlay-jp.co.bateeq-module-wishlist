@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Codesicle::wishlistajax" title="Wishlist Ajax" translate="title" module="Codesicle_WishlistAjax" sortOrder="100" parent="Codesicle_Base::top_level" action="adminhtml/system_config/edit/section/codesicle_wishlist" resource="Magento_Backend::content"/>
+    </menu>
+</config>
