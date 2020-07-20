@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!--
+~ Codesicle_WishlistAjax
+~
+~ @category    Codesicle
+~ @package     Codesicle_WishlistAjax
+~ @copyright   Copyright (c) 2019 Codesicle
+~ @author      Vlad Bogdan Patru <vp@codesicle.com>
+~ @link        http://www.codesicle.com
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="category.product.addto">
+            <block class="Magento\Wishlist\Block\Catalog\Product\ProductList\Item\AddTo\Wishlist"
+                   name="category.product.wishlist.ajax" before="compare" ifconfig="codesicle_wishlist/wishlist/ajax_enable"
+                   template="Codesicle_WishlistAjax::wishlist-add.phtml"/>
+        </referenceBlock>
+    </body>
+</page>

@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!--
+~ Codesicle_WishlistAjax
+~
+~ @category    Codesicle
+~ @package     Codesicle_WishlistAjax
+~ @copyright   Copyright (c) 2019 Codesicle
+~ @author      Vlad Bogdan Patru <vp@codesicle.com>
+~ @link        http://www.codesicle.com
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="content">
+            <block ifconfig="codesicle_wishlist/wishlist/in_compare" class="Magento\Catalog\Block\Product\Compare\ListCompare" name="catalog.compare.list.wishlist" template="Codesicle_WishlistAjax::product/compare/list.phtml" cacheable="false"/>
+        </referenceContainer>
+    </body>
+</page>

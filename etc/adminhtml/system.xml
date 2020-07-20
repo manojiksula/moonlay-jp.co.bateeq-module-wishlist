@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="codesicle" sortOrder="0" translate="label" class="codesicle-tab">
+            <label>Codesicle</label>
+        </tab>
+        <section id="codesicle_wishlist" showInDefault="1" sortOrder="100" translate="label">
+            <label>Wishlist Ajax Configurations</label>
+            <tab>codesicle</tab>
+            <resource>Codesicle_WishlistAjax::config_codesicle_base</resource>
+            <group id="wishlist" sortOrder="0" translate="label" showInDefault="1">
+                <label>Ajax Wishlist</label>
+                <field id="ajax_enable" translate="label" type="select" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Wishlist ajax</label>
+                    <comment>Enable add to wishlist with ajax.</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="change_class" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Link class change</label>
+                    <comment>If set to yes it will change the "add to wishlist" class when the product is in wishlist "in-wishlist" will be added</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="counter" translate="label" type="select" sortOrder="15" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Without string?</label>
+                    <comment>Show only item count without "item's" string if set to yes</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="in_compare" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Use in compare</label>
+                    <comment>Enable add to wishlist with ajax in compare list. This will override the template.</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

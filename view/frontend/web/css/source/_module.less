@@ -1,0 +1,20 @@
+///**
+// * Codesicle_WishlistAjax
+// *
+// * @category  Codesicle
+// * @copyright Copyright (c) 2019 Codesicle
+// * @author    Vlad Patru <vp@codesicle.com>
+// * @link      http://www.codesicle.com
+// */
+
+@color_in-wishlist: @color-red9;
+& when (@media-common = true) {
+    .action.to-wishlist {
+        &:extend(.product-item .action.towishlist all);
+        &.in-wishlist {
+            &:before {
+                color: @color_in-wishlist;
+            }
+        }
+    }
+}
