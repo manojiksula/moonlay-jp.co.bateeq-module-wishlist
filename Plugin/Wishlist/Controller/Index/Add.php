@@ -178,7 +178,7 @@ class Add
                 $productId = isset($requestParams['product']) ? (int)$requestParams['product'] : null;
                 if (!$productId) {
                     $response['errors'] = true;
-                    $response['message'] = __('We can\'t specify a product.');
+                    $response['message'] = __('製品を特定できません');
                 }
 
                 try {
@@ -190,22 +190,22 @@ class Add
                 $response = [
                     'errors' => false,
                     'redirect' => false,
-                    'message' => __('Product %1 was added to your wishlist.', $product->getName())
+                    'message' => __('%1 があなたのほしい物リストに追加されました。', $product->getName())
                 ];
 
                 if (!$this->customerSession->isLoggedIn()) {
                     $response['errors'] = true;
-                    $response['message'] = __('You need to login before adding a product to wishlist.');
+                    $response['message'] = __('欲しいものリストにアイテムを追加するには、ログインもしくは登録する必要があります。');
                     $response['redirect'] = true;
                 } else {
                     if (!$this->formKeyValidator->validate($subject->getRequest())) {
                         $response['errors'] = true;
-                        $response['message'] = __('Invalid form key. Please refresh the page.');
+                        $response['message'] = __('不正なフォームキーです。ページを再読み込みしてください。');
                     }
 
                     $wishlist = $this->wishlistProvider->getWishlist();
                     if (!$wishlist) {
-                        throw new NotFoundException(__('Page not found.'));
+                        throw new NotFoundException(__('ページが見つかりません。'));
                     }
 
                     if ($this->customerSession->getBeforeWishlistRequest()) {
@@ -215,7 +215,7 @@ class Add
 
                     if (!$productId || !$product || !$product->isVisibleInCatalog()) {
                         $response['errors'] = true;
-                        $response['message'] = __('We can\'t specify a product.');
+                        $response['message'] = __('製品を特定できません');
                     }
 
                     try {
@@ -236,13 +236,13 @@ class Add
                         $this->wishlistHelper->calculate();
 
                         $response['errors'] = false;
-                        $response['message'] = __('Product %1 was added to your wishlist.', $product->getName());
+                        $response['message'] = __('%1 があなたのほしい物リストに追加されました。', $product->getName());
                     } catch (\Exception $e) {
                         $response['errors'] = true;
-                        $response['message'] = __('We can\'t add the item to Wish List right now.');
+                        $response['message'] = __('このアイテムをほしい物リストに現在追加できません。');
                     } catch (\Magento\Framework\Exception\LocalizedException $e) {
                         $response['errors'] = true;
-                        $response['message'] = __('We can\'t add the item to Wish List right now: %1.', $e->getMessage());
+                        $response['message'] = __('このアイテムをほしい物リストに現在追加できません: %1.', $e->getMessage());
                     }
 
                     if ($response['errors'] === true) {
