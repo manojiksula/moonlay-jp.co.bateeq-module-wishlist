@@ -132,13 +132,13 @@ class Remove
                 $wishlist = $this->wishlist->loadByCustomerId($customerId, true);
 
                 if (!$wishlist) {
-                    throw new NotFoundException(__('Page not found.'));
+                    throw new NotFoundException(__('ページが見つかりません。'));
                 }
 
                 $item = $wishlist->getItem($id);
 
                 if (!$item->getId()) {
-                    throw new NotFoundException(__('Page not found.'));
+                    throw new NotFoundException(__('ページが見つかりません。'));
                 }
 
                 try {
@@ -146,7 +146,7 @@ class Remove
                     $wishlist->save();
 
                     $response['errors'] = false;
-                    $response['message'] = __('%1 has been removed from your Wish List.', $item->getName());
+                    $response['message'] = __('%1 はほしいものリストから削除されました', $item->getName());
 
                     $this->eventManager->dispatch(
                         'wishlist_remove_product',
@@ -155,10 +155,10 @@ class Remove
 
                 } catch (\Magento\Framework\Exception\LocalizedException $e) {
                     $response['errors'] = true;
-                    $response['message'] = __('We can\'t delete the item from Wish List right now because of an error: %1.', $e->getMessage());
+                    $response['message'] = __('エラー: %1　のために現在ウィッシュリストからこのアイテムを削除できません。', $e->getMessage());
                 } catch (\Exception $e) {
                     $response['errors'] = true;
-                    $response['message'] = __('We can\'t delete the item from the Wish List right now.');
+                    $response['message'] = __('このアイテムをウィッシュリストから現在削除できません。');
                 }
 
                 $this->helperData->calculate();
