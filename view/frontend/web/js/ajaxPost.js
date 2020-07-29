@@ -176,8 +176,8 @@ define([
                     $('body').trigger('processStop');
                     messageContainer.addSuccessMessage({message: response.message});
                     if (target) {
-                        target.attr('title', $.mage.__('Remove from wishlist'));
-                        target.children('span').text($.mage.__('Remove from wishlist'));
+                        target.attr('title', $.mage.__('ほしいものリストから削除されます'));
+                        target.children('span').text($.mage.__('ほしいものリストから削除されます'));
                         target.addClass('ajax-remove');
                     }
                     if (parent.options.classCookie === 1) {
