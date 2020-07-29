@@ -66,8 +66,8 @@ define(
                                     }
                                     inWishlist.addClass('ajax-remove');
                                     inWishlist.attr('data-ajax-remove', removeUrl);
-                                    inWishlist.attr('title', $.mage.__('Remove from wishlist'));
-                                    inWishlist.children('span').text($.mage.__('Remove from wishlist'));
+                                    inWishlist.attr('title', $.mage.__('ほしいものリストから削除されます'));
+                                    inWishlist.children('span').text($.mage.__('ほしいものリストから削除されます'));
                                 }
                             }
 
